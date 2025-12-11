@@ -67,35 +67,37 @@ public class VehiculoController implements ActionListener, KeyListener, WindowLi
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        //Botones de FrmPacienteView
+        
         if (e.getSource() == frmA.btnNuevo) {  //Insertar un registro nuevo
             this.operacion = 1;
             iniciarVistaNuevo("Registro de Vehículos");
+            frmB.txtPlaca.setEnabled(true);
             frmB.setVisible(true);
         }
 
-        if (e.getSource() == frmA.btnEditar) { //Modificar un vehiculo
+        if (e.getSource() == frmA.btnEditar) { // Modificar un vehiculo
 
-            if (frmA.tblVehiculos.getSelectedRowCount() == 1) {
-              int fila = frmA.tblVehiculos.getSelectedRow();
-                frmB.txtPlaca.setText(vehiculo.getPlaca());
-                frmB.txtPlaca.setEnabled(false);
-                frmB.txtMarca.setText(frmA.tblVehiculos.getValueAt(fila, 1).toString());
-                frmB.txtVIN.setText(frmA.tblVehiculos.getValueAt(fila, 2).toString());
-               
-                
-                frmB.txtModelo.setText(frmA.tblVehiculos.getValueAt(fila, 3).toString());
-                frmB.cmbTipo.setSelectedItem(frmA.tblVehiculos.getValueAt(fila, 4).toString());
-                frmB.txtPrecio.setText(frmA.tblVehiculos.getValueAt(fila, 5).toString());
+    if (frmA.tblVehiculos.getSelectedRowCount() == 1) {
+        int fila = frmA.tblVehiculos.getSelectedRow();
 
-                this.operacion = 2;
-                iniciarVistaNuevo("Actualizar Vehiculo");
-                frmB.setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(frmA, "Debe seleccionar un registro");
-            }
+        
+        frmB.txtPlaca.setText(frmA.tblVehiculos.getValueAt(fila, 0).toString());
+        frmB.txtPlaca.setEnabled(false);
 
-        }
+        frmB.txtMarca.setText(frmA.tblVehiculos.getValueAt(fila, 1).toString());
+        frmB.txtVIN.setText(frmA.tblVehiculos.getValueAt(fila, 2).toString());
+        frmB.txtModelo.setText(frmA.tblVehiculos.getValueAt(fila, 3).toString());
+        frmB.cmbTipo.setSelectedItem(frmA.tblVehiculos.getValueAt(fila, 4).toString());
+        frmB.txtPrecio.setText(frmA.tblVehiculos.getValueAt(fila, 5).toString());
+
+        this.operacion = 2;
+        iniciarVistaNuevo("Actualizar Vehiculo");
+        frmB.setVisible(true);
+
+    } else {
+        JOptionPane.showMessageDialog(frmA, "Debe seleccionar un registro");
+    }
+}
 
         if (e.getSource() == frmA.btnEliminar) { //Eliminar un vehiculo
 
@@ -173,6 +175,7 @@ public class VehiculoController implements ActionListener, KeyListener, WindowLi
         frmB.cmbTipo.setSelectedIndex(0);
         frmB.txtPrecio.setText(null);
         frmB.txtPlaca.requestFocus();
+        frmB.txtPlaca.setEnabled(true);
     }
 
     @Override
