@@ -12,6 +12,7 @@ import com.rentacar.view.DlgVehiculoView;
 import com.rentacar.model.VehiculoModel;
 import com.rentacar.pojo.Cliente;
 import com.rentacar.pojo.Empleado;
+import com.rentacar.pojo.Reserva;
 import com.rentacar.pojo.Temporada;
 import com.rentacar.pojo.Vehiculo;
 import com.rentacar.view.DlgClienteView;
@@ -19,6 +20,7 @@ import com.rentacar.view.DlgEmpleadoView;
 import com.rentacar.view.DlgNuevaTemporadaView;
 import com.rentacar.view.DlgNuevoClienteView;
 import com.rentacar.view.DlgNuevoEmpleadoView;
+import com.rentacar.view.DlgReservasView;
 import com.rentacar.view.FrmRentacarView;
 import com.rentacar.view.DlgTemporadaView;
 import java.awt.event.ActionEvent;
@@ -61,6 +63,21 @@ public class MainController implements ActionListener{
     DlgNuevaTemporadaView frmNewTemporadas = new DlgNuevaTemporadaView(frmRentaCar, true);
     TemporadaController tempController = new TemporadaController(temp, tempModel, frmMainTemporadas, frmNewTemporadas);
     
+    
+    
+    
+    
+    // Reservas
+    
+    Reserva res = new Reserva();
+    ReservaModel resModel = new ReservaModel();
+
+    DlgReservasView frmMainReservas = new DlgReservasView(frmRentaCar, false);
+    DlgReservasView dlgNuevaReserva = new DlgReservasView(frmRentaCar, true);
+
+    ReservaController resController = new ReservaController( res, resModel, frmMainReservas, dlgNuevaReserva);
+
+
     public MainController(FrmRentacarView frmRentaCar){
         this.frmRentaCar = frmRentaCar;
         this.frmRentaCar.btnClientes.addActionListener(this);
@@ -101,6 +118,11 @@ public class MainController implements ActionListener{
        if (e.getSource()== frmRentaCar.btnTemporadas) {
           frmMainTemporadas.setVisible(true);
         }
+       if (e.getSource() == frmRentaCar.btnReservas) {
+    frmMainReservas.setVisible(true);
+        }
+
 
     }
+    
 }
