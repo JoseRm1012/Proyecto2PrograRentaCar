@@ -2,8 +2,8 @@ package com.rentacar.controller;
 
 import com.rentacar.model.ClienteModel;
 import com.rentacar.pojo.Cliente;
-import com.rentacar.view.FrmClienteView;
-import com.rentacar.view.FrmNuevoClienteView;
+import com.rentacar.view.DlgClienteView;
+import com.rentacar.view.DlgNuevoClienteView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -19,14 +19,14 @@ public class ClienteController implements ActionListener, KeyListener, WindowLis
     private Cliente cliente;
     private ClienteModel cliModel;
 
-    private FrmClienteView frmA;          // vista principal
-    private FrmNuevoClienteView frmB;     // vista nuevo/editar
+    private DlgClienteView frmA;          // vista principal
+    private DlgNuevoClienteView frmB;     // vista nuevo/editar
     private int operacion;                // 1 = insertar, 2 = actualizar
 
     DefaultTableModel modelT;
 
     public ClienteController(Cliente cli, ClienteModel model,
-                             FrmClienteView frmMain, FrmNuevoClienteView frmNew) {
+                             DlgClienteView frmMain, DlgNuevoClienteView frmNew) {
 
         this.cliente = cli;
         this.cliModel = model;
@@ -60,7 +60,7 @@ public class ClienteController implements ActionListener, KeyListener, WindowLis
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        // Botones de FrmClienteView (principal)
+        // Botones de DlgClienteView (principal)
         if (e.getSource() == frmA.btnNuevo) {   // Insertar
             this.operacion = 1;
             limpiarVistaNuevo();
@@ -114,7 +114,7 @@ public class ClienteController implements ActionListener, KeyListener, WindowLis
             }
         }
 
-        // Botones de FrmNuevoClienteView
+        // Botones de DlgNuevoClienteView
         if (e.getSource() == frmB.btnGuardar) {
 
             cliente.setCedula(Integer.parseInt(frmB.txtCedula.getText()));

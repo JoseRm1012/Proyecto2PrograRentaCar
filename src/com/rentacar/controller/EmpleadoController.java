@@ -2,8 +2,8 @@ package com.rentacar.controller;
 
 import com.rentacar.model.EmpleadoModel;
 import com.rentacar.pojo.Empleado;
-import com.rentacar.view.FrmEmpleadoView;
-import com.rentacar.view.FrmNuevoEmpleadoView;
+import com.rentacar.view.DlgEmpleadoView;
+import com.rentacar.view.DlgNuevoEmpleadoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -19,16 +19,16 @@ public class EmpleadoController implements ActionListener, KeyListener, WindowLi
     private Empleado empleado;
     private EmpleadoModel empModel;
 
-    private FrmEmpleadoView frmA;          // vista principal
-    private FrmNuevoEmpleadoView frmB;     // vista nuevo/editar
+    private DlgEmpleadoView frmA;          // vista principal
+    private DlgNuevoEmpleadoView frmB;     // vista nuevo/editar
     private int operacion;                 // 1 = insertar, 2 = actualizar
 
     DefaultTableModel modelT;
 
     public EmpleadoController(Empleado emp,
                               EmpleadoModel model,
-                              FrmEmpleadoView frmMain,
-                              FrmNuevoEmpleadoView frmNew) {
+                              DlgEmpleadoView frmMain,
+                              DlgNuevoEmpleadoView frmNew) {
 
         this.empleado = emp;
         this.empModel = model;

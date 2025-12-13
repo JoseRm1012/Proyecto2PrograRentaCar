@@ -6,8 +6,8 @@ package com.rentacar.controller;
 
 import com.rentacar.model.TemporadaModel;
 import com.rentacar.pojo.Temporada;
-import com.rentacar.view.FrmNuevaTemporadaView;
-import com.rentacar.view.FrmTemporadaView;
+import com.rentacar.view.DlgNuevaTemporadaView;
+import com.rentacar.view.DlgTemporadaView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -27,16 +27,16 @@ public class TemporadaController implements ActionListener, KeyListener, WindowL
     private Temporada temporada;
     private TemporadaModel tempModel;
 
-    private FrmTemporadaView frmA;           // vista principal
-    private FrmNuevaTemporadaView frmB;      // vista nuevo / editar
+    private DlgTemporadaView frmA;           // vista principal
+    private DlgNuevaTemporadaView frmB;      // vista nuevo / editar
     private int operacion;                   // 1 = insertar, 2 = actualizar
 
     DefaultTableModel modelT;
 
     public TemporadaController(Temporada t,
                                TemporadaModel model,
-                               FrmTemporadaView frmMain,
-                               FrmNuevaTemporadaView frmNew) {
+                               DlgTemporadaView frmMain,
+                               DlgNuevaTemporadaView frmNew) {
 
         this.temporada = t;
         this.tempModel = model;

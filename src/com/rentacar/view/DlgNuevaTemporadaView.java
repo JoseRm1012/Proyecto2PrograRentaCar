@@ -8,12 +8,12 @@ package com.rentacar.view;
  *
  * @author josea
  */
-public class FrmNuevaTemporadaView extends javax.swing.JDialog {
+public class DlgNuevaTemporadaView extends javax.swing.JDialog {
 
     /**
      * Creates new form FrmNuevaTemporada
      */
-    public FrmNuevaTemporadaView(java.awt.Frame parent, boolean modal) {
+    public DlgNuevaTemporadaView(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -189,21 +189,23 @@ public class FrmNuevaTemporadaView extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgNuevaTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FrmNuevaTemporadaView dialog = new FrmNuevaTemporadaView(new javax.swing.JFrame(), true);
+                DlgNuevaTemporadaView dialog = new DlgNuevaTemporadaView(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -4,8 +4,8 @@
  */
 package com.rentacar.controller;
 
-import com.rentacar.view.FrmNuevoVehiculoView;
-import com.rentacar.view.FrmVehiculoView;
+import com.rentacar.view.DlgNuevoVehiculoView;
+import com.rentacar.view.DlgVehiculoView;
 import com.rentacar.model.VehiculoModel;
 import com.rentacar.pojo.Vehiculo;
 import java.awt.event.ActionEvent;
@@ -27,14 +27,14 @@ public class VehiculoController implements ActionListener, KeyListener, WindowLi
     private Vehiculo vehiculo;
     private VehiculoModel vehModel;
 
-    private FrmVehiculoView frmA;
-    private FrmNuevoVehiculoView frmB;
+    private DlgVehiculoView frmA;
+    private DlgNuevoVehiculoView frmB;
     private int operacion;
 
     DefaultTableModel modelT;
 
-    public VehiculoController(Vehiculo veh, VehiculoModel model, FrmVehiculoView frmMain,
-            FrmNuevoVehiculoView frmNew) {
+    public VehiculoController(Vehiculo veh, VehiculoModel model, DlgVehiculoView frmMain,
+            DlgNuevoVehiculoView frmNew) {
         this.vehiculo = veh;
         this.vehModel = model;
 

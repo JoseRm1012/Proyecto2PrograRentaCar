@@ -8,12 +8,12 @@ package com.rentacar.view;
  *
  * @author josea
  */
-public class FrmTemporadaView extends javax.swing.JDialog {
+public class DlgClienteView extends javax.swing.JDialog {
 
     /**
-     * Creates new form FrmTemporadaView
+     * Creates new form FrmClienteView
      */
-    public FrmTemporadaView(java.awt.Frame parent, boolean modal) {
+    public DlgClienteView(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -34,9 +34,9 @@ public class FrmTemporadaView extends javax.swing.JDialog {
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblTemporadas = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        tblClientes = new javax.swing.JTable();
         txtRegs = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -44,7 +44,7 @@ public class FrmTemporadaView extends javax.swing.JDialog {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblBuscar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblBuscar.setText("Buscar por Placa o el tipo de Vehiculo:");
+        lblBuscar.setText("Buscar por nombre:");
 
         txtBuscar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -75,10 +75,10 @@ public class FrmTemporadaView extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(lblBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -99,8 +99,8 @@ public class FrmTemporadaView extends javax.swing.JDialog {
                 .addGap(30, 30, 30))
         );
 
-        tblTemporadas.setBackground(new java.awt.Color(153, 255, 153));
-        tblTemporadas.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setBackground(new java.awt.Color(153, 255, 153));
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -108,17 +108,17 @@ public class FrmTemporadaView extends javax.swing.JDialog {
 
             }
         ));
-        tblTemporadas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tblTemporadas.setUpdateSelectionOnSort(false);
-        jScrollPane1.setViewportView(tblTemporadas);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Cantidad de registros:");
+        tblClientes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblClientes.setUpdateSelectionOnSort(false);
+        jScrollPane1.setViewportView(tblClientes);
 
         txtRegs.setEditable(false);
         txtRegs.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtRegs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtRegs.setFocusable(false);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Cantidad de registros:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,10 +139,11 @@ public class FrmTemporadaView extends javax.swing.JDialog {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtRegs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtRegs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,20 +166,21 @@ public class FrmTemporadaView extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmTemporadaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FrmTemporadaView dialog = new FrmTemporadaView(new javax.swing.JFrame(), true);
+                DlgClienteView dialog = new DlgClienteView(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -198,7 +200,7 @@ public class FrmTemporadaView extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBuscar;
-    public javax.swing.JTable tblTemporadas;
+    public javax.swing.JTable tblClientes;
     public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtRegs;
     // End of variables declaration//GEN-END:variables
